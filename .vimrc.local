@@ -117,10 +117,6 @@ endif
 set nolist
 
 nmap U gU
-nmap W :w<cr>
-nmap S :w<cr>
-nmap Q :q<cr>
-nmap X :x<cr>
 
 " 再也不用每次很麻烦地保存了...
 noremap W :w<cr>
