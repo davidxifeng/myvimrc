@@ -7,7 +7,7 @@
 [user]
 	name = David Feng
 	email = davidxifeng@gmail.com
-    signingkey = EC634FD9
+	signingkey = 2E0C77A2E8D104BD
 [color]
     diff   = auto
     status = auto
@@ -52,3 +52,5 @@
 	path = 
 [commit]
 	template = /Users/wjwl/.stCommitMsg
+[gpg]
+	program = gpg

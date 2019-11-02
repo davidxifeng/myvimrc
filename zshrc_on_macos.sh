@@ -1,4 +1,3 @@
-set -o vi
 
 export HOMEBREW_NO_AUTO_UPDATE=TRUE
 
@@ -29,11 +28,11 @@ export PATH=~/work/flutter-space/flutter/bin:$PATH
 export PATH=~/Library/Python/2.7/bin:$PATH
 
 export NODE_PATH="/usr/local/lib/node_modules"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) # oracle java 1.8
+export JAVA_HOME=$(/usr/libexec/java_home -v 12)
 
 # env LUA_PATH : package.path, LUA_CPATH
-export LUAPATH=~/david/gl/lua/src
-export LUADIR=~/david/gl/lua/src
+export LUAPATH=~/Lua/lua-5.3.5/src
+export LUADIR=~/Lua/lua-5.3.5/src
 
 export VIS_PATH=~/david/vis
 
@@ -42,3 +41,7 @@ source "/usr/local/opt/nvm/nvm.sh"
 
 # auto jump 2018-04-13 Fri 18:14
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export GPG_TTY=$(tty)
+
+set -o vi
