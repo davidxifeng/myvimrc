@@ -37,7 +37,10 @@ export LUADIR=~/Lua/lua-5.3.5/src
 export VIS_PATH=~/david/vis
 
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
+# This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion" 
+
 
 # auto jump 2018-04-13 Fri 18:14
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
