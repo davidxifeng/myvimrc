@@ -43,7 +43,7 @@ export NVM_DIR="$HOME/.nvm"
 # https://stackoverflow.com/questions/47620508/how-to-set-node-path-when-using-nvm
 # nvm intentionally does not set NODE_PATH because it's an antipattern to use it
 # it allows you to require things that aren't locally installed.
-export NODE_PATH=~/.nvm/versions/node/v12.13.0/lib/node_modules
+export NODE_PATH=~/.nvm/versions/node/v12.13.1/lib/node_modules
 
 # auto jump 2018-04-13 Fri 18:14
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
