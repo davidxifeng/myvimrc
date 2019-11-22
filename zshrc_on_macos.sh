@@ -27,7 +27,6 @@ export PATH=~/work/flutter-space/flutter/bin:$PATH
 # some pip local installed apps
 export PATH=~/Library/Python/2.7/bin:$PATH
 
-export NODE_PATH="/usr/local/lib/node_modules"
 export JAVA_HOME=$(/usr/libexec/java_home -v 12)
 
 # env LUA_PATH : package.path, LUA_CPATH
@@ -41,6 +40,10 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion" 
 
+# https://stackoverflow.com/questions/47620508/how-to-set-node-path-when-using-nvm
+# nvm intentionally does not set NODE_PATH because it's an antipattern to use it
+# it allows you to require things that aren't locally installed.
+export NODE_PATH=~/.nvm/versions/node/v12.13.0/lib/node_modules
 
 # auto jump 2018-04-13 Fri 18:14
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
