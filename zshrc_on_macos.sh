@@ -7,7 +7,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="xiong-chiamiov-plus"
-plugins=(git brew cabal sublime)
+plugins=(git brew cabal sublime fossil)
 
 source $ZSH/oh-my-zsh.sh
 source ~/david/myvimrc/aliases_for_os_x.sh
@@ -18,20 +18,16 @@ export LANG=en_US.UTF-8
 export EDITOR=nvim
 
 export PATH=/usr/local/sbin:$PATH
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=~/bin:$PATH
-export PATH=~/.cabal/bin:$PATH
-export PATH=~/Library/Android/sdk/platform-tools:$PATH
-export PATH=~/work/flutter-space/flutter/bin:$PATH
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH=~/.cabal/bin:$PATH
+#export PATH=~/Library/Android/sdk/platform-tools:$PATH
+#export PATH=~/work/flutter-space/flutter/bin:$PATH
 
 # some pip local installed apps
-export PATH=~/Library/Python/2.7/bin:$PATH
+#export PATH=~/Library/Python/2.7/bin:$PATH
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 12)
-
-# env LUA_PATH : package.path, LUA_CPATH
-export LUAPATH=~/Lua/lua-5.3.5/src
-export LUADIR=~/Lua/lua-5.3.5/src
+export JAVA_HOME=$(/usr/libexec/java_home -v 13)
 
 export VIS_PATH=~/david/vis
 
@@ -51,3 +47,30 @@ export NODE_PATH=~/.nvm/versions/node/v12.13.1/lib/node_modules
 export GPG_TTY=$(tty)
 
 set -o vi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/david/.sdkman"
+[[ -s "/Users/david/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/david/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/david/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/david/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/david/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/david/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=${DEVKITPRO}/devkitARM
+export DEVKITPPC=${DEVKITPRO}/devkitPPC
+export PATH=${DEVKITPRO}/tools/bin:$PATH

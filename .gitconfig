@@ -1,9 +1,3 @@
-[giggle]
-    main-window-maximized       = false
-    main-window-geometry        = 1261x876+273+66
-    history-view-vpane-position = 325
-    main-window-view            = HistoryView
-    file-view-vpane-position    = 836
 [user]
 	name = David Feng
 	email = davidxifeng@gmail.com
@@ -15,7 +9,7 @@
 [alias]
     s    = status
     a    = add
-    aa   = add .
+    aa   = add --all
     c    = commit
     cm   = commit -m
     ch   = checkout
@@ -26,6 +20,8 @@
     dfc  = diff --cached --ignore-all-space
     remote = remote -v
     rmt = remote -v
+    p = push
+    pl = pull
 
 [credential]
     helper = cache --timeout=36000
@@ -50,7 +46,7 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[commit]
-	template = /Users/wjwl/.stCommitMsg
 [gpg]
 	program = gpg
+[pull]
+	rebase = true
