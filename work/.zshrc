@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/david/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -115,11 +115,10 @@ alias rl=rlwrap
 alias rs='rlwrap sqlite3 data/app.db'
 
 
-export PATH=/home/david/bin:/home/david/work/sdk/tools/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf/bin:$PATH
+export PATH=$HOME/.bin:$HOME/work/sdk/tools/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf/bin:$PATH
 
 export EDITOR=vim
-
-export RLWRAP_HOME=/home/david/.rlwrap
+export RLWRAP_HOME=$HOME/.rlwrap
 
 # to fix errors when ( git commit -S )on WSL2
 export GPG_TTY=$TTY
@@ -129,11 +128,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ -e /home/david/.nix-profile/etc/profile.d/nix.sh ]; then . /home/david/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-
-export rb=http://192.168.5.252:8080
-export lb=http://localhost:8080
 
 # >>> xmake >>>
 [[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
@@ -141,13 +137,13 @@ export lb=http://localhost:8080
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export LD_PRELOAD=/home/david/projects/stderred/build/libstderred.so
+export LD_PRELOAD=$HOME/projects/stderred/build/libstderred.so
 
 # 2022/6/9
 source <(kubectl completion zsh)
 
 # pnpm
-export PNPM_HOME="/home/david/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
@@ -171,6 +167,6 @@ alias tt0='tmux attach-session -t 0'
 #autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
 
-[ -f "/home/david/.ghcup/env" ] && source "/home/david/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
