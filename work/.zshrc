@@ -161,3 +161,12 @@ complete -C '/usr/local/bin/aws_completer' aws
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# pnpm
+export PNPM_HOME="/home/david/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
