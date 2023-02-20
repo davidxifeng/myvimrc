@@ -10,24 +10,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="xiong-chiamiov-plus"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+HYPHEN_INSENSITIVE="true" # Case-sensitive completion must be off. _ and - will be interchangeable.
+zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -112,7 +98,16 @@ alias s=sqlite3
 alias lu='lua -lli'
 alias sq=sqlite3
 alias rl=rlwrap
+
+alias pn=pnpm # 去掉了独立安装的pnpm,改成使用npm i -g安装
+
 alias rs='rlwrap sqlite3 data/app.db'
+
+alias 66-kubectl='kubectl --context 66-microk8s'
+alias 251-kubectl='kubectl --context microk8s'
+alias aws-kubectl='kubectl --context sw.aws.swiftechie.com'
+alias aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace stg'
+alias prod-aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace default'
 
 
 export PATH=$HOME/.bin:$HOME/work/sdk/tools/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf/bin:$PATH
@@ -142,12 +137,6 @@ export LD_PRELOAD=$HOME/projects/stderred/build/libstderred.so
 # 2022/6/9
 source <(kubectl completion zsh)
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-
 # Add JBang to environment
 alias j!=jbang
 export PATH="$HOME/.jbang/bin:$PATH"
@@ -161,6 +150,8 @@ compdef _restish restish
 
 
 alias tt0='tmux attach-session -t 0'
+alias tt1='tmux attach-session -t 1'
+alias tt2='tmux attach-session -t 2'
 
 # for aws cli, 2022/7/14
 #autoload bashcompinit && bashcompinit
