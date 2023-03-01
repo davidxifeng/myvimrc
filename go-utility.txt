@@ -1,0 +1,9 @@
+# go tools
+
+go install github.com/cosmtrek/air@latest
+go install github.com/charmbracelet/glow@latest
+go install github.com/charmbracelet/gum@latest
+go install github.com/mikefarah/yq/v4@latest
+go install go.k6.io/k6@latest
+go install github.com/muesli/duf@latest
+go install github.com/maaslalani/slides@latest

@@ -101,15 +101,6 @@ alias rl=rlwrap
 
 alias pn=pnpm # 去掉了独立安装的pnpm,改成使用npm i -g安装
 
-alias rs='rlwrap sqlite3 data/app.db'
-
-alias 66-kubectl='kubectl --context 66-microk8s'
-alias 251-kubectl='kubectl --context microk8s'
-alias aws-kubectl='kubectl --context sw.aws.swiftechie.com'
-alias aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace stg'
-alias prod-aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace default'
-
-
 export PATH=$HOME/.bin:$HOME/work/sdk/tools/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf/bin:$PATH
 
 export EDITOR=vim
@@ -148,11 +139,6 @@ source <(restish completion zsh)
 # fix 当前版本的restish 默认没有启用补全函数
 compdef _restish restish
 
-
-alias tt0='tmux attach-session -t 0'
-alias tt1='tmux attach-session -t 1'
-alias tt2='tmux attach-session -t 2'
-
 # for aws cli, 2022/7/14
 #autoload bashcompinit && bashcompinit
 #autoload -Uz compinit && compinit
@@ -170,3 +156,22 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PNPM_HOME="/home/david/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+alias tt0='tmux attach-session -t 0'
+alias tt1='tmux attach-session -t 1'
+alias tt2='tmux attach-session -t 2'
+
+alias rs='rlwrap sqlite3 data/app.db'
+alias 66-kubectl='kubectl --context 66-microk8s'
+alias 251-kubectl='kubectl --context microk8s'
+alias aws-kubectl='kubectl --context sw.aws.swiftechie.com'
+alias stg-aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace stg'
+alias prod-aws-kubectl='kubectl --context sw.aws.swiftechie.com --namespace default'
+
+
+# bun completions
+[ -s "/home/david/.bun/_bun" ] && source "/home/david/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
