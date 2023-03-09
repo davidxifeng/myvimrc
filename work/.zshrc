@@ -161,6 +161,7 @@ alias tt0='tmux attach-session -t 0'
 alias tt1='tmux attach-session -t 1'
 alias tt2='tmux attach-session -t 2'
 
+alias gs='git status'
 alias rs='rlwrap sqlite3 data/app.db'
 alias 66-kubectl='kubectl --context 66-microk8s'
 alias 251-kubectl='kubectl --context microk8s'
