@@ -30,10 +30,10 @@
 [core]
     pager        = less -r
     quotepath    = false
-	excludesfile = ~/.git_ignore_global
+	excludesfile = /Users/david/.git_ignore_global
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "media"]
     clean = git-media-clean %f
@@ -48,5 +48,3 @@
 	path = 
 [gpg]
 	program = gpg
-[pull]
-	rebase = true
