@@ -19,3 +19,7 @@ luac.out
 *.pb.cc
 
 xcuserdata
+
+__pycache__
+
+*.tmp
