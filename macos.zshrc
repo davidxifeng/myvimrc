@@ -104,7 +104,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
-export PATH=$HOME/go/bin:$HOME/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+export PATH=$HOME/go/bin:$HOME/.bin:$PATH
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.11`
 #export PATH=${JAVA_HOME}/bin:$PATH
@@ -124,6 +124,13 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
 
+# bun
+export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 eval "$(rbenv init - zsh)"
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -137,6 +144,20 @@ eval "$(pyenv init -)"
 # 安装sqlpkg时, 安装的webinstall工具
 source ~/.config/envman/load.sh
 
-# bun
-export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/david/.dart-cli-completion/zsh-config.zsh ]] && . /Users/david/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+
+#. "$HOME/.atuin/bin/env"
+#eval "$(atuin init zsh)"
+
+
+# bun completions
+[ -s "/Users/david/Library/Application Support/reflex/bun/_bun" ] && source "/Users/david/Library/Application Support/reflex/bun/_bun"
