@@ -10,6 +10,7 @@
     s    = status
     a    = add
     aa   = add --all
+    au   = add -u
     c    = commit
     cm   = commit -m
     ch   = checkout
@@ -30,7 +31,7 @@
 [core]
     pager        = less -r
     quotepath    = false
-	excludesfile = /Users/david/.git_ignore_global
+    excludesfile = /Users/david/.git_ignore_global
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
