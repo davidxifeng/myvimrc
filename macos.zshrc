@@ -32,10 +32,12 @@ set -o vi
 
 alias v=vim
 alias nv=nvim
-alias py=python
+alias py=python3
+alias python=python3
 alias g=git
 alias u='cd ..'
 alias s='stat -x'
+alias hu='htop -u david'
 alias sve='source .venv/bin/activate'
 
 
@@ -43,9 +45,9 @@ alias sve='source .venv/bin/activate'
 
 eval "$(rbenv init - zsh)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 
 # Generated for envman. Do not edit.
