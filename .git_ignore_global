@@ -24,3 +24,9 @@ xcuserdata
 __pycache__
 
 *.tmp
+
+*.exe
+
+.claude
+
+**/.claude/settings.local.json

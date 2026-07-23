@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/david/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -17,6 +24,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export HISTSIZE=1000000
+
 export MANPATH="/usr/local/man:$MANPATH"
 
 export LANG="en_US.UTF-8"
@@ -30,25 +39,22 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.11`
 export EDITOR='vim'
 set -o vi
 
-alias v=vim
+alias vi=nvim
+alias v=nvim
 alias nv=nvim
-alias py=python3
-alias python=python3
+alias py=python
+alias sve='source .venv/bin/activate'
+
 alias g=git
+
 alias u='cd ..'
 alias s='stat -x'
 alias hu='htop -u david'
-alias sve='source .venv/bin/activate'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init - zsh)"
-
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -83,3 +89,17 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 source /Users/david/.config/broot/launcher/bash/br
+
+# pnpm
+export PNPM_HOME="/Users/david/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/david/work/mosu/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/david/work/mosu/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/david/work/mosu/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/work/mosu/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
