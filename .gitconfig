@@ -53,3 +53,5 @@
 	path = git-xet
 	args = transfer
 	concurrent = true
+[init]
+	defaultBranch = main

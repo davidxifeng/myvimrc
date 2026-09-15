@@ -1,29 +1,11 @@
-# OPENSPEC:START
-# OpenSpec shell completions configuration
-fpath=("/Users/david/.oh-my-zsh/custom/completions" $fpath)
-autoload -Uz compinit
-compinit
-# OPENSPEC:END
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="xiong-chiamiov-plus"
-
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export HISTSIZE=1000000
 
 export MANPATH="/usr/local/man:$MANPATH"
@@ -36,7 +18,7 @@ export PATH=$HOME/go/bin:$HOME/.bin:/opt/homebrew/bin:$PATH
 export JAVA_HOME=`/usr/libexec/java_home -v 1.11`
 #export PATH=${JAVA_HOME}/bin:$PATH
 
-export EDITOR='vim'
+export EDITOR='nvim'
 set -o vi
 
 alias vi=nvim
@@ -51,7 +33,6 @@ alias u='cd ..'
 alias s='stat -x'
 alias hu='htop -u david'
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init - zsh)"
@@ -61,11 +42,6 @@ eval "$(rbenv init - zsh)"
 
 # 安装sqlpkg时, 安装的webinstall工具
 source ~/.config/envman/load.sh
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Added by LM Studio CLI (lms)
 #export PATH="$PATH:/Users/david/.lmstudio/bin"
@@ -85,9 +61,6 @@ if [[ -d /Users/david/Applications/quarto/bin ]]; then
 fi
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
-
-eval "$(fnm env --use-on-cd --shell zsh)"
-
 source /Users/david/.config/broot/launcher/bash/br
 
 # pnpm
@@ -98,8 +71,14 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/david/work/mosu/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/david/work/mosu/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+# Added by the BaseRT installer
+export PATH="/Users/david/.basert:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/david/work/mosu/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/work/mosu/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/david/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
